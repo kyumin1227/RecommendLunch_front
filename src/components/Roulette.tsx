@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import { Wheel } from "react-custom-roulette";
-
-const data = [
-  { id: 0, option: "0", style: { backgroundColor: "green" }, optionSize: 1 },
-  { id: 1, option: "1", style: { backgroundColor: "white" }, optionSize: 1 },
-  { id: 2, option: "2", style: { backgroundColor: "orange" }, optionSize: 1 },
-];
+import { useSelector } from "react-redux";
 
 export default () => {
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
+
+  const data = useSelector((state) => {
+    return state.restaurent;
+  });
 
   const handleSpinClick = () => {
     if (!mustSpin) {

@@ -21,4 +21,6 @@ export const restaurentSlice = createSlice({
   },
 });
 
+export const { changeOptionSize } = restaurentSlice.actions;
+
 export default restaurentSlice.reducer;

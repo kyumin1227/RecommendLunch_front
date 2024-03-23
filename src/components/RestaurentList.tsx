@@ -1,8 +1,26 @@
 import { Grid, ListItem, ListItemButton, ListItemText } from "@mui/material";
-import restaurents from "../data/RestaurentData.js";
 import { RestaurentType } from "../types/RestaurentTypes.js";
+import { changeOptionSize } from "../store/Restaurent.js";
+import { useDispatch, useSelector } from "react-redux";
 
 const RestaurentList = () => {
+  const dispatch = useDispatch();
+  const restaurents = useSelector((state) => {
+    return state.restaurent;
+  });
+
+  const handleUp = (id: number, optionSize: number) => {
+    optionSize += 1;
+    dispatch(changeOptionSize({ id, optionSize }));
+  };
+
+  const handleDown = (id: number, optionSize: number) => {
+    if (optionSize === 1) {
+      return;
+    }
+    optionSize -= 1;
+    dispatch(changeOptionSize({ id, optionSize }));
+  };
   return (
     <>
       List
@@ -22,6 +40,7 @@ const RestaurentList = () => {
                   width: "40px",
                   height: "40px",
                 }}
+                onClick={() => handleUp(restaurent.id, restaurent.optionSize)}
               >
                 +
               </ListItemButton>
@@ -39,6 +58,7 @@ const RestaurentList = () => {
                   width: "40px",
                   height: "40px",
                 }}
+                onClick={() => handleDown(restaurent.id, restaurent.optionSize)}
               >
                 -
               </ListItemButton>
