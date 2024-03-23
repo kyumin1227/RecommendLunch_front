@@ -1,18 +1,18 @@
 import { Grid, ListItem, ListItemButton, ListItemText } from "@mui/material";
 import restaurents from "../data/RestaurentData.js";
-import { RestaurantType } from "../types/RestaurentTypes.js";
+import { RestaurentType } from "../types/RestaurentTypes.js";
 
 const RestaurentList = () => {
   return (
     <>
       List
-      {restaurents.map((restaurent: RestaurantType) => (
+      {restaurents.map((restaurent: RestaurentType) => (
         <ListItem key={restaurent.id}>
           <Grid container>
             <Grid item>
-              <ListItemText primary={restaurent.name} />
+              <ListItemText primary={restaurent.option} />
             </Grid>
-            <Grid item style={{ marginLeft: "auto" }} xs={1}>
+            <Grid item style={{ marginLeft: "auto", marginRight: "30px" }} xs={1}>
               <ListItemButton
                 sx={{
                   bgcolor: "#1e88e5",
@@ -26,8 +26,8 @@ const RestaurentList = () => {
                 +
               </ListItemButton>
             </Grid>
-            <Grid item xs={1} style={{ display: "flex", justifyContent: "center" }}>
-              <ListItemText primary={0} />
+            <Grid item xs={1}>
+              <ListItemText primary={restaurent.optionSize} />
             </Grid>
             <Grid item xs={1}>
               <ListItemButton

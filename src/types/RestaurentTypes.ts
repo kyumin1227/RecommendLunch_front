@@ -1,5 +1,6 @@
-export type RestaurantType = {
+export type RestaurentType = {
   id: number;
-  name: string;
+  option: string;
+  optionSize: number;
   category?: string;
 };
