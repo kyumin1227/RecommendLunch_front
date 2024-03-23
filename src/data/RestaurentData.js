@@ -1,5 +1,12 @@
 const restaurents = [
-  { id: 0, option: "뚝불", category: "한식", optionSize: 1 },
+  {
+    id: 0,
+    option: "뚝불",
+    category: "한식",
+    optionSize: 1,
+    pcLink: "https://map.naver.com/p/entry/place/1653932444",
+    mobileLink: "https://m.place.naver.com/restaurant/1653932444/home",
+  },
   { id: 1, option: "홍대 함바그", category: "양식", optionSize: 1 },
   { id: 2, option: "석수반점", category: "중식", optionSize: 1 },
   { id: 3, option: "해담닭칼국수", category: "한식", optionSize: 1 },

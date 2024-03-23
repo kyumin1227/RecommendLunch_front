@@ -25,7 +25,7 @@ const NavBar = () => {
               </Typography>
             </Link>
           </Grid>
-          <Grid item style={{ marginLeft: "auto", marginRight: "30px", display: "flex", alignItems: "center" }}>
+          <Grid item style={{ marginLeft: "auto", marginRight: "9%", display: "flex", alignItems: "center" }}>
             <Link to={"/recommend"} style={{ textDecoration: "none", color: "white" }}>
               Go
             </Link>
