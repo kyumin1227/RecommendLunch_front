@@ -23,7 +23,6 @@ const RestaurentList = () => {
   };
   return (
     <>
-      List
       {restaurents.map((restaurent: RestaurentType) => (
         <ListItem key={restaurent.id}>
           <Grid container>

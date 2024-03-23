@@ -1,21 +1,14 @@
 import { Container } from "@mui/material";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import "./reset.css";
 
 function Root() {
   return (
     <>
+      <NavBar />
       <Container maxWidth="sm">
-        <nav>
-          <li>
-            <Link to={"/"}>Home</Link>
-          </li>
-          <li>
-            <Link to={"/recommend"}>Recommend</Link>
-          </li>
-        </nav>
-        <div>
-          <Outlet />
-        </div>
+        <Outlet />
       </Container>
     </>
   );

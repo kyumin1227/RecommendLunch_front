@@ -1,3 +1,4 @@
+import { Button, Grid } from "@mui/material";
 import React, { useState } from "react";
 import { Wheel } from "react-custom-roulette";
 import { useSelector } from "react-redux";
@@ -26,13 +27,19 @@ export default () => {
 
   return (
     <>
-      <Wheel
-        mustStartSpinning={mustSpin}
-        prizeNumber={prizeNumber}
-        data={data}
-        onStopSpinning={() => handleComplete(prizeNumber)}
-      />
-      <button onClick={handleSpinClick}>SPIN</button>
+      <Grid item xs={12} style={{ display: "flex", justifyContent: "center", marginBottom: "20px" }}>
+        <Wheel
+          mustStartSpinning={mustSpin}
+          prizeNumber={prizeNumber}
+          data={data}
+          onStopSpinning={() => handleComplete(prizeNumber)}
+        />
+      </Grid>
+      <Grid item>
+        <Button onClick={handleSpinClick} variant="contained">
+          SPIN
+        </Button>
+      </Grid>
     </>
   );
 };
