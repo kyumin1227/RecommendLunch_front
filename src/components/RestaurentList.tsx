@@ -15,7 +15,7 @@ const RestaurentList = () => {
   };
 
   const handleDown = (id: number, optionSize: number) => {
-    if (optionSize === 1) {
+    if (optionSize === 0) {
       return;
     }
     optionSize -= 1;
