@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const RestaurentList = () => {
   const dispatch = useDispatch();
-  const restaurents = useSelector((state) => {
+  const restaurents = useSelector((state: any) => {
     return state.restaurent;
   });
 

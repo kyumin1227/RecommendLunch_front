@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import restaurents from "../data/RestaurentData.js";
+import restaurents from "../data/RestaurentData.ts";
 import { RestaurentType } from "../types/RestaurentTypes";
 
 type ChangeOptionSizePayload = {

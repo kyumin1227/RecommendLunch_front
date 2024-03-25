@@ -1,5 +1,5 @@
 import { Button, Grid } from "@mui/material";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Wheel } from "react-custom-roulette";
 import { useSelector } from "react-redux";
 import { RestaurentType } from "../types/RestaurentTypes";
@@ -9,7 +9,7 @@ export default () => {
   const [prizeNumber, setPrizeNumber] = useState(0);
 
   // optionSize 0인 값을 제외하기 위해 0인 값을 필터 후 새로 아이디 부여
-  const lawData = useSelector((state) => {
+  const lawData = useSelector((state: any) => {
     return state.restaurent;
   });
 
