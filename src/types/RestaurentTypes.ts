@@ -3,4 +3,6 @@ export type RestaurentType = {
   option: string;
   optionSize: number;
   category?: string;
+  pcLink: string;
+  mobileLink: string;
 };
