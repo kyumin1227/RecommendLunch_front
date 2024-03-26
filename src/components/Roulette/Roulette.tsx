@@ -4,7 +4,7 @@ import { Wheel } from "react-custom-roulette";
 import { useSelector } from "react-redux";
 import { RestaurentType } from "../../types/RestaurentTypes";
 import RouletteResult from "./RoulletteResult";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default () => {
   const [mustSpin, setMustSpin] = useState(false);
