@@ -3,10 +3,10 @@ import { RestaurentType } from "../../types/RestaurentTypes.js";
 import { changeOptionSize } from "../../store/Restaurent.js";
 import { useDispatch } from "react-redux";
 
-const SelectedRestaurentList = (data) => {
+const SelectedRestaurentList = (data: any) => {
   const dispatch = useDispatch();
 
-  const restaurents = data.data;
+  const restaurents: RestaurentType[] = data.data;
 
   const handleUp = (id: number, optionSize: number) => {
     optionSize += 1;
