@@ -1,13 +1,12 @@
 import { Grid, ListItem, ListItemButton, ListItemText } from "@mui/material";
-import { RestaurentType } from "../types/RestaurentTypes.js";
-import { changeOptionSize } from "../store/Restaurent.js";
-import { useDispatch, useSelector } from "react-redux";
+import { RestaurentType } from "../../types/RestaurentTypes.js";
+import { changeOptionSize } from "../../store/Restaurent.js";
+import { useDispatch } from "react-redux";
 
-const RestaurentList = () => {
+const SelectedRestaurentList = (data) => {
   const dispatch = useDispatch();
-  const restaurents = useSelector((state: any) => {
-    return state.restaurent;
-  });
+
+  const restaurents = data.data;
 
   const handleUp = (id: number, optionSize: number) => {
     optionSize += 1;
@@ -69,4 +68,4 @@ const RestaurentList = () => {
   );
 };
 
-export default RestaurentList;
+export default SelectedRestaurentList;
