@@ -1,16 +1,16 @@
 import { Button, Grid } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Wheel } from "react-custom-roulette";
 import { useSelector } from "react-redux";
 import { RestaurentType } from "../../types/RestaurentTypes";
 import RouletteResult from "./RoulletteResult";
-
-// TODO 결과 출력
+import { redirect, useNavigate } from "react-router-dom";
 
 export default () => {
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(-1);
   const [result, setResult] = useState<RestaurentType>();
+  const navigate = useNavigate();
 
   // optionSize 0인 값을 제외하기 위해 0인 값을 필터 후 새로 아이디 부여
   const lawData = useSelector((state: any) => {
@@ -26,6 +26,15 @@ export default () => {
       pcLink: item.pcLink,
       mobileLink: item.mobileLink,
     }));
+
+  // optionSize가 1 이상인 데이터가 없는 경우
+  useEffect(() => {
+    if (data.length === 0) {
+      alert("하나 이상의 가게를 선택하여 주세요.");
+
+      navigate("/");
+    }
+  }, [data, navigate]);
 
   const handleSpinClick = () => {
     if (!mustSpin) {

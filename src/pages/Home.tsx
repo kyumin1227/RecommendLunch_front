@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import SelectedRestaurentList from "../components/RestaurentList/SelectedRestaurentList";
 import styled from "styled-components";
-import { Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import UnSelectedRestautentList from "../components/RestaurentList/UnSelectedRestautentList";
 import { RestaurentType } from "../types/RestaurentTypes";
 
@@ -10,8 +10,6 @@ const Home = () => {
     return state.restaurent;
   });
 
-  // TODO 데이터를 필터링 하여 optionSize가 1 이상이면 위의 리스트로 0 이면 아래의 리스트로 보내기
-
   const selectedRestaurents = restaurents.filter((item: RestaurentType) => item.optionSize > 0);
   const unselectedRestaurents = restaurents.filter((item: RestaurentType) => item.optionSize === 0);
 
@@ -19,9 +17,12 @@ const Home = () => {
     <>
       <Grid container display={"flex"} justifyContent={"center"}>
         <Grid item xs={12}>
-          <Typography variant="h4" marginY={2}>
-            선택 완료
-          </Typography>
+          <Box display={"flex"} alignItems={"center"}>
+            <Typography variant="h4" marginY={2}>
+              선택 완료
+            </Typography>
+            <Typography marginLeft={2}>({selectedRestaurents.length})</Typography>
+          </Box>
           <hr />
         </Grid>
         <Grid item xs={12} display={"flex"} justifyContent={"center"}>
@@ -31,9 +32,12 @@ const Home = () => {
         </Grid>
         <Grid item xs={12}>
           <hr />
-          <Typography variant="h4" marginY={2}>
-            미선택
-          </Typography>
+          <Box display={"flex"} alignItems={"center"}>
+            <Typography variant="h4" marginY={2}>
+              미선택
+            </Typography>
+            <Typography marginLeft={2}>({unselectedRestaurents.length})</Typography>
+          </Box>
           <hr />
         </Grid>
         <Grid item xs={12} display={"flex"} justifyContent={"center"}>
