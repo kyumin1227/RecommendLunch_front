@@ -27,8 +27,13 @@ const NavBar = () => {
           </Grid>
           <Grid item style={{ marginLeft: "auto", marginRight: "9%", display: "flex", alignItems: "center" }}>
             <li>
+              <Link to={"roullette"} style={{ textDecoration: "none", color: "white" }}>
+                Roullette
+              </Link>
+            </li>
+            <li>
               <Link to={"roullette/result"} style={{ textDecoration: "none", color: "white" }}>
-                Go
+                Roullette-result
               </Link>
             </li>
             <li>
