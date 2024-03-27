@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import Roulette from "../components/Roulette/Roulette";
+import Roulette from "../../components/Roulette/Roulette";
 
 const Recommend = () => {
   return (

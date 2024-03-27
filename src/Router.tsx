@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "./Root";
-import Home from "./pages/Home";
-import Recommend from "./pages/Recommend";
+import RoulletteSelect from "./pages/RoullettePage/RoulletteSelect";
+import Roullette from "./pages/RoullettePage/Roullette";
+import Order from "./pages/OrderPage";
 
 const router = createBrowserRouter([
   {
@@ -10,11 +11,23 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Home />,
       },
       {
-        path: "recommend",
-        element: <Recommend />,
+        path: "roullette",
+        children: [
+          {
+            path: "",
+            element: <RoulletteSelect />,
+          },
+          {
+            path: "result",
+            element: <Roullette />,
+          },
+        ],
+      },
+      {
+        path: "order",
+        element: <Order />,
       },
     ],
   },

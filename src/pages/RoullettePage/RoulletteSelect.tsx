@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
-import SelectedRestaurentList from "../components/RestaurentList/SelectedRestaurentList";
+import SelectedRestaurentList from "../../components/RestaurentList/SelectedRestaurentList";
 import styled from "styled-components";
 import { Box, Grid, Typography } from "@mui/material";
-import UnSelectedRestautentList from "../components/RestaurentList/UnSelectedRestautentList";
-import { RestaurentType } from "../types/RestaurentTypes";
+import UnSelectedRestautentList from "../../components/RestaurentList/UnSelectedRestautentList";
+import { RestaurentType } from "../../types/RestaurentTypes";
 
 const Home = () => {
   const restaurents = useSelector((state: any) => {
